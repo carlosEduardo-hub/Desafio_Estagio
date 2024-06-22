@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from "sonner";
 
 const App = () => {
   const [products, setProducts] = useState([]);
@@ -25,6 +26,7 @@ const App = () => {
       { ...newProduct, value: parseFloat(newProduct.value) },
     ]);
     setShowForm(false);
+    toast.success('Produto cadastrado com sucesso!')
   };
 
   function handleNewProduct(e) {
